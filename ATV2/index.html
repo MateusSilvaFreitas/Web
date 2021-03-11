@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Programação Web</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./script_form.js"></script>    
+    <link rel="stylesheet" href="./style_form.css">  
+</head>
+<body>
+    
+    <div class="container">
+        
+        <h1>Programação Web</h1>   
+
+        
+        <h2>filtros de formularios</h2>
+        
+        <form action="#">
+            
+            <label for="txt" class="label">Text</label>
+            <input type="text" id="txt" class="input">
+            
+            <label for="pass" class="label">Password</label>
+            <input type="password" id="pass" class="input">         
+            
+            <label><input type="radio" name="rd" value="M">Manha</label>
+            <label><input type="radio" name="rd" value="T" checked>Tarde</label>
+            <label><input type="radio" name="rd" value="N">Noite</label>
+            <br>
+            <label><input type="checkbox" name="rd" value="M" checked>Manha</label>
+            <label><input type="checkbox" name="rd" value="T">Tarde</label>
+            <label><input type="checkbox" name="rd" value="N">Noite</label>
+            <br>
+            <select id="select" name="sl" class="input">
+                <option value="0" >Selecione</option>
+                <option value="M" selected>Matutino</option>
+                <option value="T">Vespertino</option>
+                <option value="N" >Noturno</option>
+            </select>
+            <textarea name="msg" id="" rows="5" class="input">Mensagem</textarea>
+            
+            <button class="input" id="btn" type="button">Button</button>
+            <input type="submit" value="submit" class="input" disabled>
+            <input type="reset" value="reset" class="input">      
+            
+        </form>
+    </div>
+</body>
+</html>
