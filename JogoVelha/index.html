@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <title>Jogo da velha</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+</head>
+
+<body>
+    <label>Nome do jogador 1:</label>
+    <input type="text" name="jogador1">
+    <br>
+    <br>
+    <label>Nome do jogador 2:</label>
+    <input type="text" name="jogador2">
+    <br>
+    <br>
+
+
+
+    <div id="jogoVelha">
+        <div class="linha">
+            <div class="coluna" id="coluna1"></div>
+            <div class="coluna" id="coluna2"></div>
+            <div class="coluna" id="coluna3"></div>
+        </div>
+        <div class="linha">
+            <div class="coluna" id="coluna4"></div>
+            <div class="coluna" id="coluna5"></div>
+            <div class="coluna" id="coluna6"></div>
+        </div>
+        <div class="linha">
+            <div class="coluna" id="coluna7"></div>
+            <div class="coluna" id="coluna8"></div>
+            <div class="coluna" id="coluna9"></div>
+        </div>
+    </div>
+    <div id="resultado"></div>
+
+    <input type="button" value="O que é o jogo da velha?" onclick="loadTexto()">
+    <div id="texto"></div>
+
+</body>
+
+</html>
