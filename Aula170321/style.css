@@ -1,0 +1,27 @@
+body{
+    background: #e0dbdb;
+}
+
+.input-group{
+        box-shadow: 0px 8px 13px -9px black;
+        padding-bottom: 1rem;
+}
+.list-group{
+    box-shadow: 0px 8px 13px -9px black;
+}
+    .list-group-item .btn{
+        opacity: .4;
+        transition: opacity .5s;
+        font-size: .8rem;
+    }
+    .list-group-item:hover .btn{
+        opacity: 1;
+    }
+
+    .list-group-item.done{
+        background-color: #dadada;
+    }
+    .list-group-item.done span{
+        text-decoration: line-through;
+
+    }
