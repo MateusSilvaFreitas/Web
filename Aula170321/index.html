@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Programação Web</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>    
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+<body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-8 offset-md-2">
+    			<h1>Lista de tarefas</h1>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="input-group col-md-8 offset-md-2">
+			  <input type="text" class="form-control" placeholder="Adicionar uma tarefa" aria-label="Adicionar uma tarefa" aria-describedby="button-task">
+			  <div class="input-group-append">
+			    <button class="btn btn-outline-secondary btn-addTask" type="button" id="button-task">Adicionar </button>
+			  </div>
+			</div>
+    	</div>
+    	
+    	<div class="row mt-5">
+    		<div class="col-md-8 offset-md-2">
+		    	<div class="list-group todo-list">
+				  <label href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+				    <input type="checkbox" class="mr-2"> 
+				    <span class="flex-grow-1">Estudar HTML</span>
+				    <button type="button" class="btn btn-danger btn-sm">Apagar</button>
+				  </label>
+				  <label href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+					  <input type="checkbox" class="mr-2"> 
+					  <span class="flex-grow-1"> Estudar Css </span>
+					  <button type="button" class="btn btn-danger btn-sm">Apagar</button></label>
+				  <label href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+					  <input type="checkbox" class="mr-2"> 
+					  <span class="flex-grow-1">Rever Princípios básicos de Java</span>
+					  <button type="button" class="btn btn-danger btn-sm">Apagar</button></label>
+				  <label href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+					  <input type="checkbox" class="mr-2"> 
+					  <span class="flex-grow-1">Jquery</span>
+					  <button type="button" class="btn btn-danger btn-sm">Apagar</button></label>
+				   <label href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+					  <input type="checkbox" class="mr-2"> 
+					  <span class="flex-grow-1">Requisições</span>
+					  <button type="button" class="btn btn-danger btn-sm">Apagar</button></label>					  
+				</div>
+    		</div>
+		</div>
+	</div>
+</body>
+</html>
