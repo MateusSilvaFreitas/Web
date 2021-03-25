@@ -1,0 +1,67 @@
+body{
+    background-image: url(./img/img_fundo.png);
+}
+header{
+    background-color: #007c27;
+    display: block;
+    box-shadow: 1px 5px 5px black;
+}
+.negrito{
+    font-weight: bold;
+}
+header:hover{
+    box-shadow: 1px 5px 5px #d64100;
+    transition: .5s;
+}
+#temporadaHelp{
+    font-size: 10px;
+    text-align: right;
+}
+figure{ 
+    width: 10%;
+}
+figure img{
+    height: 100px;
+    float:left;
+}
+
+article {
+    margin-top: 2%;
+    width: 31.3%; 
+    float: left;
+    margin-left: 2%;
+    
+
+}
+section{
+    height: 100px;
+    background-color: #FFF;
+    width: 75%;
+    cursor: pointer;
+    border-radius: 5px 5px 5px;
+    box-shadow: 5px 5px 5px black;
+}
+section:hover{
+    box-shadow: 5px 5px 5px #d64100;
+    transition: .5s;
+}
+section p{
+    position: relative;
+    top: 15%;
+}
+
+.marcadores {
+    height: auto;
+    width: 80%;
+}
+.marcadores figure{
+    position: relative;
+    width: 100px;
+    height: 165px;    
+    float: left;
+}
+.marcadores img{
+    margin-top: 25%;
+    
+}
+
