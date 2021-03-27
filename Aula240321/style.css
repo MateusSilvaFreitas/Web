@@ -2,6 +2,9 @@ body{
     background-image: url(./img/img_fundo.png);
 }
 header{
+    color: #FFF;
+}
+header{
     background-color: #007c27;
     display: block;
     box-shadow: 1px 5px 5px black;
@@ -13,7 +16,7 @@ header:hover{
     box-shadow: 1px 5px 5px #d64100;
     transition: .5s;
 }
-#temporadaHelp{
+#temporadaHelp, #leagueHelp{
     font-size: 10px;
     text-align: right;
 }
@@ -33,21 +36,26 @@ article {
     
 
 }
+.dados section{
+    cursor: pointer;
+}
 section{
     height: 100px;
     background-color: #FFF;
     width: 75%;
-    cursor: pointer;
     border-radius: 5px 5px 5px;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 3px 5px 5px black;
+    margin-top: 8%;  
+ 
 }
 section:hover{
-    box-shadow: 5px 5px 5px #d64100;
+    box-shadow: 5px 5px 5px #007c27;
     transition: .5s;
 }
 section p{
     position: relative;
     top: 15%;
+    left: 5%
 }
 
 .marcadores {
@@ -65,3 +73,27 @@ section p{
     
 }
 
+.dadosTime section header{
+    width: auto;
+    height: 100px;
+}
+
+h5{
+    text-align: center;
+}
+h5 img{
+    width: 10%;
+    float: right;
+}
+.dadosTime section{
+    height: 1200px;
+}
+
+.dadosTime section article{
+    width: auto;
+    height: auto;
+}
+.dadosTime article p{
+    width: auto;
+    height: 10px;
+}
