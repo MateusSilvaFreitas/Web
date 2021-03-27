@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>FuteMais</title>
 </head>
+
 <body>
     <form>
         <header>
             <div class="col-md-2 fundo">
-            <label for="temporada" class="form-label">Temporada</label>
-            <input type="number" class="form-control" id="temporada" aria-describedby="temporadaHelp" max="4">
-            <div id="temporadaHelp" class="form-text">Ex: 2020</div>
+                <label for="temporada" class="form-label">Temporada</label>
+                <input type="number" class="form-control" id="temporada" aria-describedby="temporadaHelp" >
+                <div id="temporadaHelp" class="form-text">Ex: 2020</div>
+            </div>
+            <div class="col-md-2 fundo">
+                <select class="form-control-lg" aria-label="Selecione uma liga" id="ligas"
+                    aria-describedby="leagueHelp">
+                    <option value="71">Brasil - Série A</option>
+                    <option value="39">Inglaterra - Premier Liga</option>
+                    <option value="78">Alemanha - Budesliga</option>
+                    <option value="135">Itália - Série A</option>
+                    <option value="140">Espanha - La Liga</option>
+                    <option value="2">UEFA Champions League</option>
+                </select>
+                <div id="leagueHelp" class="form-text">Selecione a liga</div>
+                <button id="botaoSubmit" class="btn btn-secundary">Buscar</button>
             </div>
         </header>
     </form>
@@ -22,25 +38,21 @@
     <article>
         <h2>Times participantes</h2>
         <div class="dados">
-            
         </div>
     </article>
     <article>
-        <h2>Marcadores da temporada</h2>
+        <h2>Artilheiros da temporada</h2>
         <div class="dadosMarcadores">
 
         </div>
     </article>
-    
+
     <article>
         <h2>Informações do time</h2>
-        <section>
-            <figure> 
-                <img src="https://media.api-sports.io/football/teams/118.png" alt="Logo Bahia">
-            </figure>
-            <p>Nome: Bahia</p>
-            <p>Fundação: 1965</p>
-        </section>
+        <div class="dadosTime">
+
+        </div>
     </article>
 </body>
+
 </html>
