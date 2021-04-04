@@ -4,6 +4,10 @@ $(function(){
         var liga = $("#ligas").val();
         var temporada = $("#temporada").val();
         
+        $(".dadosMarcadores").text("");
+        $(".dadosTime").text(""); 
+        $(".dados").text("");
+        
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -28,27 +32,6 @@ $(function(){
         fazRequisicaoMarcadores(settings);
     })
 
-    $('.dados section').on('click', function(e){
-        console.log("ENTROU")
-        var idTime = $(e.target).closest("section").attr('id');
-        var temporada = $("#temporada").val();
-        var liga = $("#ligas").val();
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": `https://api-football-beta.p.rapidapi.com/teams/statistics?team=${idTime}&season=${temporada}&league=${liga}`,
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "dd1ab06470msh12c63d89fba8c10p12a625jsnf0ab35c95d4d",
-                "x-rapidapi-host": "api-football-beta.p.rapidapi.com"
-            }
-        }
-        $.ajax(settings).done(function (response){
-            alert("aa")
-            criaTelaInfoTime(response.response);
-        })
-    })
-
     function fazRequisicao(settings){
         $.ajax(settings).done(function (response){
             if(response.response[0] === undefined){
@@ -65,10 +48,9 @@ $(function(){
     }
     
     function criaTela(dados){
-        $(".dados").text("");
         $.each(dados, function(i, el){
             $(".dados").append(
-                `<section id="${el.team.id}">
+                `<section id="${el.team.id}" class="timeDet">
                 <figure> 
                     <img src="${el.team.logo}" alt="Logo ${el.team.name}">
                 </figure>
@@ -79,7 +61,6 @@ $(function(){
     }
     function criaTelaMarcadores(dadosMarcadores){
         count = 0;
-        $(".dadosMarcadores").text("");
         $.each(dadosMarcadores, function(i, el){
             if(count < 10){
                 $(".dadosMarcadores").append(
@@ -107,15 +88,21 @@ $(function(){
     }
     function criaTelaInfoTime(dadosTime){
         $(".dadosTime").text("");
-        $(".dadosTime").append(`
+        logoPais = "";
+        if(dadosTime.league.country != "World"){
+            logoPais = `<img src="${dadosTime.league.flag}" alt="Logo ${dadosTime.league.country}">`
+        }
+    
+        informacaoTime =            
+            `
     <section>
         <header>
             <figure> 
                 <img src="${dadosTime.league.logo}" alt="Logo ${dadosTime.league.name}">
             </figure>
-            <h5>${dadosTime.league.country} - ${dadosTime.league.name} <img src="${dadosTime.league.flag}" alt="Logo ${dadosTime.league.country}"></h5>
+            <h5>${dadosTime.league.country != "World" ? dadosTime.league.country + " - " : ""}  ${dadosTime.league.name} ${logoPais}</h5>
             <br>
-            <h5>${dadosTime.team.name} <img src="${dadosTime.team.logo}" alt="Logo ${dadosTime.team.name}"></h5>
+            <h5>${dadosTime.team.name}  <img src="${dadosTime.team.logo}" alt="Logo ${dadosTime.team.name}>"</h5>
         </header>
         <article>
             <h5>Maiores Resultados</h5>
@@ -165,7 +152,30 @@ $(function(){
             <p><span class="negrito">Total:</span> ${dadosTime.goals.against.total.total} (MÉDIA PORA JOGO: ${dadosTime.goals.against.average.total})</p>
         </article>
     </section>
-        `)
+        `
+        $(".dadosTime").append(informacaoTime)
     }
-
+    
+$(".dados").click(function(e){
+    var idTime = $(e.target).closest("section").attr('id');
+    var temporada = $("#temporada").val();
+    var liga = $("#ligas").val();
+    
+    if(idTime === undefined){
+        return;
+    }
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://api-football-beta.p.rapidapi.com/teams/statistics?team=${idTime}&season=${temporada}&league=${liga}`,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "dd1ab06470msh12c63d89fba8c10p12a625jsnf0ab35c95d4d",
+            "x-rapidapi-host": "api-football-beta.p.rapidapi.com"
+        }
+    }
+    $.ajax(settings).done(function (response){
+        criaTelaInfoTime(response.response);
+    })
+})
 })
