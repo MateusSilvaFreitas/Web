@@ -7,20 +7,11 @@ exports.getBooks = async function () {
     await promisify(redisClient.get).bind(redisClient)("livros")
   );
   if (!livros) {
-    console.log("Nçao tem livro!")
     livros = await booksData.getBooks();
     redisClient.set("livros", JSON.stringify(livros));
-  }else{
-    console.log("Tem livro!")
   }
   return livros;
 };
-
-async function getKeyRedis(key) {
-  return (retorno = redisClient.get(key, (err, reply) => {
-    retorno = reply;
-  }));
-}
 
 exports.getBook = function (bookCod) {
   return booksData.getBook(bookCod);
