@@ -1,4 +1,4 @@
-const database = require('../database/database')
+const database = require('../database/database');
 
 exports.getBooks = function(){
     return database.query('select * FROM public."Livro"');

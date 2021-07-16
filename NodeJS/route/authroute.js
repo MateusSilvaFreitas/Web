@@ -11,7 +11,6 @@ router.post('/autenticar', async function(req, res) {
     }
     res.json(usuario)
 });
-p
 
 function isEmpty(obj) {
     for(var prop in obj) {
